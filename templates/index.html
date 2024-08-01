@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with File</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+      /* Global styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e8e3a9;
+      }
+
+      /* Header styles */
+     .header-text {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+
+     .header-text h1 {
+        font-weight: bold;
+        color: #333;
+      }
+
+      /* Container styles */
+     .container-box {
+        display:flex;
+        flex-direction:column;
+        max-width: 500px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Form styles */
+     .form-box {
+        margin-top: 20px;
+      }
+
+     .form-box input[type="file"] {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+     .form-box input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+     .form-box input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+
+      /* Link styles */
+     .link-box {
+        text-decoration: none;
+        color: #337ab7;
+      }
+
+     .link-box:hover {
+        color: #23527c;
+      }
+    </style>
+</head>
+<body>
+    <h1 class="header-text">Chat With your Documents and get Summary of your documents</h1>
+    <div class="container-box">
+        <form class="form-box" method="post" enctype="multipart/form-data">
+            <input type="file" name="files[]" multiple><br><br>
+            <input type="submit" value="Upload">
+        </form>
+        <br>
+        <a class="link-box" href="{{ url_for('uploaded_files') }}">View uploaded files</a>
+    </div>
+</body>
+</html>

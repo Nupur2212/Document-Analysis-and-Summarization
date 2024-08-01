@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+</head>
+<body>
+    <div class="container">
+    <h1>Question: <h3>{{ query }}</h3></h1>
+    <p><h2>Answer:</h2> {{ answer }}</p>
+    <h2>Sources:</h2>
+    <ul>
+        {% for source in sources %}
+        <li>{{ source }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{{ url_for('uploaded_files') }}">Back to Uploaded Files</a>
+    </div>
+</body>
+</html>

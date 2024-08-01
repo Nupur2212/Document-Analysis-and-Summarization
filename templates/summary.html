@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>Summary for {{ filename }}</h1>
+    <p>{{ summary }}</p>
+    {% if audio_path %}
+    <audio controls>
+        <source src="{{ url_for('uploaded_file', filename=audio_path) }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    {% endif %}
+    <br>
+    <a href="{{ url_for('uploaded_files') }}">Back to uploaded files</a>
+    </div>
+</body>
+</html>
