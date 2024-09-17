@@ -282,5 +282,5 @@ def generate_answer_from_gemini(prompt):
     return result
 
 if __name__ == '__main__':
-    app.secret_key = 'supersecretkey'
+    app.secret_key = ''
     app.run(debug=True, use_reloader=False)
