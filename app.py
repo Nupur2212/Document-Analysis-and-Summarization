@@ -12,7 +12,7 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from pptx import Presentation
 from bs4 import BeautifulSoup
 
-apikey='AIzaSyDd_39jNQicd54PDv0WXFh4xry6F2H4vJk'
+apikey=''
 genai.configure(api_key=apikey)
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
